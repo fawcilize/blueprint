@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@babel/generator": "^7.8.3",
     "babel-traverse": "^6.26.0",
     "babylon": "^6.18.0",
     "dotenv": "^8.2.0",
@@ -12,7 +13,9 @@
     "node-source-walk": "^4.2.0",
     "nodemon": "^2.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"

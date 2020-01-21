@@ -1,6 +1,7 @@
 const t = require("@babel/types");
+const createAstFromPath = require("./createAstFromPath");
 
-async function findCalleeDeclaration(path) {
+async function findCalleeDeclaration(path, workingDirectory) {
   if (t.isIdentifier(path)) {
     const name = path.node.name;
 
@@ -9,6 +10,19 @@ async function findCalleeDeclaration(path) {
     }
 
     if (path.scope.hasGlobal(name)) {
+      if (name === "require") {
+        const modulePath = path.parentPath.get("arguments.0").node.value;
+        if (modulePath.startsWith(".")) {
+          // TODO Get path prefix from File or Program node?
+          const programPath = await createAstFromPath(
+            workingDirectory,
+            `${modulePath}.js`
+          );
+
+          // TODO Not program...need to find callback in function
+          return programPath;
+        }
+      }
       return path;
     }
   }
@@ -18,6 +32,7 @@ async function findCalleeDeclaration(path) {
   }
 
   if (t.isVariableDeclarator(path)) {
+    // TODO is this a better place to handle require statements?
     return;
   }
 

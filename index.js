@@ -1,10 +1,12 @@
 const t = require("@babel/types");
+const path = require("path");
 const { default: traverse } = require("@babel/traverse");
 const { default: generator } = require("@babel/generator");
 const PathHandler = require("./handlers/pathHandler");
 const callExpression = require("./handlers/callExpression");
 const pathHelper = require("./pathHelper");
 const PathTraverser = require("./pathTraverser");
+
 const pathTraverser = new PathTraverser(pathHelper);
 
 const pathHandler = new PathHandler();
@@ -24,10 +26,6 @@ async function printNode(treeNode) {
     console.log("--------------------------------------------------");
   }
 
-  if (treeNode.match) {
-    console.log("  Match:", treeNode.match);
-  }
-
   if (treeNode.children) {
     console.group();
     treeNode.children.forEach(child => {
@@ -37,8 +35,11 @@ async function printNode(treeNode) {
   }
 }
 
-async function asyncTraverse(path, callback) {
-  const result = await pathTraverser.traverse(path, callback);
+async function asyncTraverse(path, { match, workingDirectory }) {
+  const result = await pathTraverser.traverse(path, {
+    match,
+    workingDirectory
+  });
   console.log("--------------------------------------------------");
   console.log("Result");
   console.log("--------------------------------------------------");
@@ -70,15 +71,10 @@ async function isConsoleLog(path) {
 }
 
 async function entry() {
-  const output = await createAstFromPath("./sampleModule.js");
-
-  traverse(output, {
-    enter(path) {
-      if (path.type === "Program") {
-        path.stop();
-        asyncTraverse(path, isConsoleLog);
-      }
-    }
+  const programPath = await createAstFromPath(__dirname, "./sampleModule.js");
+  asyncTraverse(programPath, {
+    match: isConsoleLog,
+    workingDirectory: __dirname
   });
 }
 

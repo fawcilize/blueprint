@@ -5,9 +5,12 @@ class PathTraverser {
     this.pathHelper = pathHelper;
   }
 
-  async traverseNewExpression(path, callback) {
+  async traverseNewExpression(path, options) {
     const callee = path.get("callee");
-    const declarationPath = await this.pathHelper.findCalleeDeclaration(callee);
+    const declarationPath = await this.pathHelper.findCalleeDeclaration(
+      callee,
+      options.workingDirectory
+    );
 
     if (t.isClass(declarationPath)) {
       const classBody = declarationPath.get("body");
@@ -17,54 +20,58 @@ class PathTraverser {
           t.isClassMethod(bodyPath) &&
           bodyPath.node.key.name === "constructor"
         ) {
-          return this.traverseFunction(bodyPath, callback);
+          return this.traverseFunction(bodyPath, options);
         }
       });
     }
   }
 
-  async traverseCallExpression(path, callback) {
+  async traverseCallExpression(path, options) {
     const callee = path.get("callee");
-    const declarationPath = await this.pathHelper.findCalleeDeclaration(callee);
+    const declarationPath = await this.pathHelper.findCalleeDeclaration(
+      callee,
+      options.workingDirectory
+    );
 
     if (declarationPath.scope.hasGlobal(declarationPath)) {
-      return { path: declarationPath, match: await callback(path) };
+      const match = await options.match(path);
+      return match ? { path: declarationPath, match } : null;
     }
 
     if (t.isFunction(declarationPath)) {
-      return this.traverseFunction(declarationPath, callback);
+      return this.traverseFunction(declarationPath, options);
     }
   }
 
-  async traverse(path, callback) {
+  async traverse(path, options) {
     if (t.isFunction(path)) {
       return;
     }
 
     if (t.isNewExpression(path)) {
-      return this.traverseNewExpression(path, callback);
+      return this.traverseNewExpression(path, options);
     }
 
     if (t.isCallExpression(path)) {
-      return this.traverseCallExpression(path, callback);
+      return this.traverseCallExpression(path, options);
     }
 
-    const match = await callback(path);
-    const children = await this.traverseChildren(path, callback);
+    const match = await options.match(path);
+    const children = await this.traverseChildren(path, options);
     if (match || children.length) {
       return { path, children, match };
     }
   }
 
-  async traverseFunction(path, callback) {
-    const match = await callback(path);
-    const children = await this.traverseChildren(path, callback);
+  async traverseFunction(path, options) {
+    const match = await options.match(path);
+    const children = await this.traverseChildren(path, options);
     if (match || children.length) {
       return { path, children, match };
     }
   }
 
-  async traverseChildren(path, callback) {
+  async traverseChildren(path, options) {
     let validPaths = [];
 
     const visitorKeys = t.VISITOR_KEYS[path.type];
@@ -82,7 +89,7 @@ class PathTraverser {
             continue;
           }
 
-          const processedPath = await this.traverse(childPath, callback);
+          const processedPath = await this.traverse(childPath, options);
           if (processedPath) {
             validPaths.push(processedPath);
           }

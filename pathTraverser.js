@@ -56,6 +56,9 @@ class PathTraverser {
       return this.traverseCallExpression(path, options);
     }
 
+    if (t.isVariableDeclaration(path)) {
+    }
+
     const match = await options.match(path);
     const children = await this.traverseChildren(path, options);
     if (match || children.length) {

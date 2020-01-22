@@ -33,6 +33,7 @@ async function findCalleeDeclaration(path, workingDirectory) {
 
   if (t.isVariableDeclarator(path)) {
     // TODO is this a better place to handle require statements?
+    console.log(path);
     return;
   }
 

@@ -44,6 +44,15 @@ class PathTraverser {
   }
 
   async traverse(path, options) {
+    if (t.isCallExpression(path)) {
+      const declarationPath = await this.pathHelper.findDeclaration(path);
+    }
+
+    const children = await this.traverseChildren(path, options);
+    return { path, children };
+  }
+
+  async traverseBackup(path, options) {
     if (t.isFunction(path)) {
       return;
     }

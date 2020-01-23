@@ -1,6 +1,44 @@
 const t = require("@babel/types");
 const createAstFromPath = require("./createAstFromPath");
 
+async function findImmediateMember(path, member) {}
+
+async function findDeclaration(path, workingDirectory) {
+  if (t.isFunction(path)) {
+    return path;
+  }
+
+  if (t.isCallExpression(path)) {
+    const callee = path.get("callee");
+
+    if (t.isMemberExpression(callee)) {
+      const objectPath = callee.get("object");
+      const declaration = await findDeclaration(objectPath);
+      if (declaration === objectPath) {
+        // Global
+        return path;
+      }
+
+      const propertyPath = callee.get("property");
+      if (propertyPath) {
+        // test
+      }
+    }
+  }
+
+  if (t.isIdentifier(path)) {
+    const name = path.node.name;
+    if (path.scope.hasGlobal(name)) {
+      return path;
+    }
+
+    const binding = path.scope.getBinding(name);
+    if (binding) {
+      return await findDeclaration(binding.path);
+    }
+  }
+}
+
 async function findCalleeDeclaration(path, workingDirectory) {
   if (t.isIdentifier(path)) {
     const name = path.node.name;
@@ -87,7 +125,8 @@ async function findCalleeDeclaration(path, workingDirectory) {
 }
 
 module.exports = {
-  findCalleeDeclaration
+  findCalleeDeclaration,
+  findDeclaration
 };
 
 // function findCallees(path) {

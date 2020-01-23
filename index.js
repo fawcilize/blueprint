@@ -5,9 +5,12 @@ const { default: generator } = require("@babel/generator");
 const PathHandler = require("./handlers/pathHandler");
 const callExpression = require("./handlers/callExpression");
 const pathHelper = require("./pathHelper");
-const PathTraverser = require("./pathTraverser");
+const PathTraverser = require("./pathTraverserv2");
 
 const pathTraverser = new PathTraverser(pathHelper);
+
+const BabelTraverser = require("./babelTraverser");
+const babelTraverser = new BabelTraverser();
 
 const pathHandler = new PathHandler();
 pathHandler.addHandler("CallExpression", () => {});
@@ -44,7 +47,7 @@ async function asyncTraverse(path, { match, workingDirectory }) {
   console.log("Result");
   console.log("--------------------------------------------------");
   if (result) {
-    printNode(result);
+    // printNode(result);
   }
   console.log("--------------------------------------------------");
 }
@@ -71,11 +74,12 @@ async function isConsoleLog(path) {
 }
 
 async function entry() {
-  const programPath = await createAstFromPath(__dirname, "./sampleModule.js");
-  asyncTraverse(programPath, {
-    match: isConsoleLog,
-    workingDirectory: __dirname
-  });
+  await babelTraverser.traverse(__dirname, "./sampleModule");
+  // const programPath = await createAstFromPath(__dirname, "./sampleModule.js");
+  // asyncTraverse(programPath, {
+  //   match: isConsoleLog,
+  //   workingDirectory: __dirname
+  // });
 }
 
 entry();

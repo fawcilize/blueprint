@@ -16,19 +16,14 @@ async function createAstFromPath(workingDirectory, modulePath) {
   }
 
   try {
-    const data = await readFile(cacheKey, "utf-8");
-    const file = babelParser.parse(data, {
+    let filePath;
+    if (modulePath.startsWith(".")) {
+      filePath = `${cacheKey}.js`;
+    }
+    const data = await readFile(filePath, "utf-8");
+    astCache[cacheKey] = babelParser.parse(data, {
       sourceType: "module",
-      plugins: ["jsx", "dynamicImport"]
-    });
-
-    traverse(file, {
-      enter(path) {
-        if (path.type === "Program") {
-          path.stop();
-          astCache[cacheKey] = path;
-        }
-      }
+      plugins: ["jsx", "dynamicImport", "classProperties"]
     });
 
     return astCache[cacheKey];

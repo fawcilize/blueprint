@@ -1,3 +1,5 @@
+import { testConsole } from "./nested/sampleModule2";
+
 function nested() {
   return {
     nestedFunction: function(argument) {
@@ -31,12 +33,37 @@ function recursion(count) {
   recursion(count - 1);
 }
 
-test.apply(null, [1]);
-test.call(null, [2]);
+test.apply(null, ["Before Apply was Overridden"]);
+test.call(null, ["Before call overridden"]);
 test.bind(null, [3])();
+
+test.apply = () => {
+  console.log("Apply");
+};
+
+test.apply(null, ["After apply was overridden"]);
+
+const oldCall = Function.prototype.call;
+function myCall() {
+  Function.prototype.call = oldCall;
+  var entry = { this: this, name: this.name, args: {} };
+  for (var key in arguments) {
+    if (arguments.hasOwnProperty(key)) {
+      entry.args[key] = arguments[key];
+    }
+  }
+  this(arguments);
+  console.log("Overridden");
+  Function.prototype.call = myCall;
+}
+
+Function.prototype.call = myCall;
+
+test.call(null, ["After call overridden"]);
+
 const test2 = test.bind(null, [4]);
 test2();
-nested.nestedFunction(1);
+nested().nestedFunction(1);
 (function immediatelyInvoked(argument) {
   console.log(argument);
 })(1);
@@ -44,8 +71,12 @@ nested.nestedFunction(1);
 closure(1)();
 closure(1)(2);
 
-const arrayTest = [test(), nested()];
-arrayTest[1]();
+const arrayTest = [test(), nested(), nested];
+arrayTest[1].nestedFunction();
+arrayTest[2]().nestedFunction();
+
+const index = 1;
+arrayTest[index].nestedFunction();
 
 arrayTest.map(arrayMember => {
   console.log(arrayMember);
@@ -57,7 +88,7 @@ const assignment = argument => {
   console.log(argument);
 };
 
-const object = {
+const object2 = {
   nested: test2,
   nestedFurther: {
     nested: argument => {
@@ -68,8 +99,8 @@ const object = {
 
 assignment(10);
 
-object.nested(1);
-object.nestedFurther.nested(1);
+object2.nested(1);
+object2.nestedFurther.nested(1);
 
 function outer() {
   function inner(argument) {
@@ -82,7 +113,7 @@ function outer() {
 
 outer();
 
-function outer(argument) {
+function outer2(argument) {
   const inner = () => {
     console.log(argument);
   };
@@ -90,7 +121,7 @@ function outer(argument) {
   inner();
 }
 
-const undefinedVariable = outer(1);
+const undefinedVariable = outer2(1);
 
 class Test {
   constructor() {
@@ -164,6 +195,7 @@ object.call("argument", "argument2");
 
 // generators
 // new functions
+// prototype?
 
 // const {
 //   testConsole,

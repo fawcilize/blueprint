@@ -1,85 +1,78 @@
 const t = require("@babel/types");
 const path = require("path");
 const createAstFromPath = require("./createAstFromPath");
-
-class FileHandler {
-  constructor(programHandler) {
-    this.programHandler = programHandler || new ProgramHandler();
-  }
-
-  async process(traverser, node) {
-    this.programHandler.process(traverser, node.program);
-  }
-}
-
-class ProgramHandler {
-  constructor() {
-    this.declarations = {};
-  }
-
-  async process(traverser, node) {
-    const childrenByType = await traverser.getChildrenByType(node);
-
-    childrenByType.ClassDeclaration.forEach(classDeclaration => {
-      this.declarations[classDeclaration.id.name] = classDeclaration;
-    });
-    traverser.traverse(childrenByType.Program);
-  }
-}
-
-class FunctionDeclarationHandler {
-  async process(traverser, node, parentNode) {
-    const name = node.id ? node.id.name : "Anonymous";
-
-    console.log(name);
-    // traverser.traverseChildren(functionDeclaration);
-  }
-}
+const handlers = require("./babelHandlers");
 
 class BabelTraverser {
-  constructor(pathHelper) {
-    this.pathHelper = pathHelper;
-    this.declarations = {};
-    this.handlers = {
-      File: new FileHandler(),
-      FunctionDeclaration: new FunctionDeclarationHandler(),
-      Program: new ProgramHandler()
-    };
+  constructor() {
+    this.executions = [];
   }
 
-  async getChildrenByType(node) {
-    const nodesByType = {};
-    const visitorKeys = t.VISITOR_KEYS[node.type];
-    if (visitorKeys) {
-      visitorKeys.forEach(key => {
-        const children = Array.isArray(node[key]) ? node[key] : [node[key]];
-        children.forEach(child => {
-          nodesByType[child.type]
-            ? nodesByType[child.type].push(child)
-            : (nodesByType[child.type] = [child]);
-        });
-      });
+  async createHandler(node, parentHandler) {
+    const Handler = handlers[node.type];
+    if (Handler) {
+      const handler = new Handler(node, parentHandler, this);
+      const children = await this.getChildHandlers(node);
+      const declarations = children.reduce((declarations, child) => {
+        if (t.isDeclaration(child) && child.getDeclarations) {
+          declarations = {
+            ...declarations,
+            ...child.getDeclarations()
+          };
+        }
+
+        return declarations;
+      }, {});
+
+      if (declarations && Object.keys(declarations).length > 0) {
+        console.log(node.type);
+      }
+      // const declarations = await this.getDeclarations(node);
+      return {
+        type: node.type,
+        children,
+        declarations,
+        getDeclarations: handler.getDeclarations
+      };
     }
-
-    return nodesByType;
   }
 
-  async traverse(workingDirectory, modulePath) {
+  async handle(bodyNode, parentHandler) {
+    if (bodyNode.handle) {
+      await bodyNode.handle(this, bodyNode, parentHandler);
+    }
+  }
+
+  getChildren(node, key) {
+    return node[key].map(childNode => this.getHandler(childNode));
+  }
+
+  async traverse(handler) {
+    if (handler.traverse) {
+      handler.traverse(this);
+    }
+  }
+
+  async traverseFile(workingDirectory, modulePath) {
     const ast = await createAstFromPath(workingDirectory, modulePath);
-    this.handlers[ast.type].process(this, ast);
+    const handler = await this.createHandler(ast);
+    console.log(handler);
+    // handler.traverse();
     // Get imports
     // Get exports
     // Get side effects
     //   Follow side effects
   }
 
-  async traverseChildren(node) {
-    let paths = [];
-
+  async getChildHandlers(node) {
+    const handlers = [];
     const visitorKeys = t.VISITOR_KEYS[node.type];
     if (visitorKeys) {
       for (let i = 0; i < visitorKeys.length; i += 1) {
         let childNodes = node[visitorKeys[i]];
+        if (!childNodes) {
+          continue;
+        }
 
         if (!Array.isArray(childNodes)) {
           childNodes = [childNodes];
@@ -87,19 +80,15 @@ class BabelTraverser {
 
         for (let j = 0; j < childNodes.length; j += 1) {
           const childNode = childNodes[j];
-          if (!childNode.type) {
-            console.log("What?");
-            continue;
-          }
-
-          if (this.handlers[childNode.type]) {
-            await this.handlers[childNode.type].process(this, childNode, node);
+          const handler = await this.createHandler(childNode);
+          if (handler) {
+            handlers.push(handler);
           }
         }
       }
     }
 
-    return paths;
+    return handlers;
   }
 }
 

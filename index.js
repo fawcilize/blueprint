@@ -9,7 +9,7 @@ const PathTraverser = require("./pathTraverserv2");
 
 const pathTraverser = new PathTraverser(pathHelper);
 
-const BabelTraverser = require("./babelTraverser");
+const BabelTraverser = require("./babel/babelTraverser");
 const babelTraverser = new BabelTraverser();
 
 const pathHandler = new PathHandler();
@@ -74,7 +74,11 @@ async function isConsoleLog(path) {
 }
 
 async function entry() {
-  await babelTraverser.traverse(__dirname, "./sampleModule");
+  const output = await babelTraverser.traverseFile(
+    __dirname,
+    "./nested/sampleModule3"
+  );
+  console.log(output);
   // const programPath = await createAstFromPath(__dirname, "./sampleModule.js");
   // asyncTraverse(programPath, {
   //   match: isConsoleLog,

@@ -1,4 +1,19 @@
-import { testConsole } from "./nested/sampleModule2";
+// import { testConsole } from "./nested/sampleModule2";
+
+const testRequire = require("./nested/sampleModule2");
+const one = 1;
+
+const aaaaa = () => {
+  console.log("aaaaa");
+};
+
+// nested().nestedFunction("B?");
+nested();
+({
+  test: function() {
+    console.log("wow");
+  }
+}.test());
 
 function nested() {
   return {

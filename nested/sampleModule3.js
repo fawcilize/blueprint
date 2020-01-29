@@ -11,3 +11,5 @@ let test = {
 test.test2 = 2;
 
 test = 3;
+
+console.log("Side-effect");

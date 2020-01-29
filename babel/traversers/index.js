@@ -2,17 +2,30 @@ const t = require("@babel/types");
 const globals = require("globals");
 
 class FileHandler {
+  static async findMember(node, name) {
+    if (node.currentScope.declarations.module.exports[name]) {
+      return node.currentScope.declarations.module.exports[name];
+    }
+  }
+
   static async traverse(node, context) {
+    const { traverser } = context;
     const declarations = {
       ...globals.builtin,
       ...globals.commonjs,
       module: {
         exports: {}
+      },
+      console: {
+        log: {
+          type: "console.log"
+        }
       }
     };
 
     const fileContext = {
       ...context,
+      type: "File",
       node,
       children: [],
       currentScope: {
@@ -21,7 +34,7 @@ class FileHandler {
       }
     };
 
-    const child = await context.traverser.traverse(node.program, fileContext);
+    const child = await traverser.traverse(node.program, fileContext);
     fileContext.children = [child];
 
     return fileContext;
@@ -86,9 +99,14 @@ class VariableDeclarationHandler {
     for (let i = 0; i < node.declarations.length; i += 1) {
       const declarationNode = node.declarations[i];
       // TODO type not variable declarator?
-      const name = declarationNode.id.name;
-      await traverser.evaluate(declarationNode.init, context);
+      if (t.isIdentifier(declarationNode.id)) {
+        const name = declarationNode.id.name;
+        const result = await traverser.evaluate(declarationNode.init, context);
+        context.currentScope.declarations[name] = result;
+      }
     }
+
+    return { node };
   }
 }
 
@@ -113,20 +131,32 @@ class CallExpressionHandler {
         node.arguments[0].value
       );
 
-      console.log(ast);
+      // TODO combine with import/export
+      return ast.currentScope.declarations.module.exports;
     }
-    console.log(node.type);
   }
 
   static async evaluate(node, context) {
-    await this.findDeclaration(node, context);
+    return this.findDeclaration(node, context);
+  }
+
+  static async traverse(node, context) {
+    const { traverser } = context;
+    const declaration = await traverser.findDeclaration(node.callee, context);
+    const callStack = [];
+    const childContext = await traverser.traverse(declaration, context);
+
+    return { node, callStack, childContext };
   }
 }
 
 class ExpressionStatementHandler {
   static async traverse(node, context) {
     const { traverser } = context;
-    return traverser.traverse(node.expression, context);
+    return {
+      node,
+      children: await traverser.traverse(node.expression, context)
+    };
   }
 }
 
@@ -136,10 +166,22 @@ class AssignmentExpressionHandler {
     const leftName = traverser.getName(node.left);
     const ownerNode = await traverser.findOwner(node.left, context);
     ownerNode[leftName] = node.right;
+
+    return { node };
   }
 }
 
-class FunctionDeclarationHandler {}
+class FunctionDeclarationHandler {
+  static async getDeclarationsByName(node, context) {
+    return {
+      [node.id.name]: node
+    };
+  }
+
+  static async traverse(node, context) {
+    return { node };
+  }
+}
 
 class ImportDeclarationHandler {}
 
@@ -194,6 +236,10 @@ class IdentifierHandler {
 
     throw new Error(`Unable to find definition for: ${node.name}`);
   }
+
+  static async traverse(node, context) {
+    return { node };
+  }
 }
 
 class ClassDeclarationHandler {}
@@ -201,6 +247,15 @@ class ClassDeclarationHandler {}
 class ObjectExpressionHandler {
   static async findMember(node, name) {
     return node.properties.find(property => property.key.name === name);
+  }
+
+  static async evaluate(node, context) {
+    const properties = node.properties;
+    for (let i = 0; i < properties.length; i += 1) {
+      const property = properties[i];
+    }
+
+    return node;
   }
 }
 

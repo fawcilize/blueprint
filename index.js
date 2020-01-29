@@ -76,7 +76,7 @@ async function isConsoleLog(path) {
 async function entry() {
   const output = await babelTraverser.traverseFile(
     __dirname,
-    "./nested/sampleModule3"
+    "./nested/sampleModule2"
   );
   console.log(output);
   // const programPath = await createAstFromPath(__dirname, "./sampleModule.js");

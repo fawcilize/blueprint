@@ -3,42 +3,98 @@ const traversers = require("./traversers");
 const createAstFromPath = require("../createAstFromPath");
 
 class BabelTraverser {
-  constructor() {
-    this.getName = this.call.bind(this, "getName");
-    this.getDeclarationsByName = this.call.bind(this, "getDeclarationsByName");
-    this.findOwner = this.call.bind(this, "findOwner");
-    this.findDeclaration = this.call.bind(this, "findDeclaration");
-    this.traverse = this.call.bind(this, "traverse");
-    this.evaluate = this.call.bind(this, "evaluate");
+  constructor() {}
+
+  createTraverser(parentContext) {
+    function call(functionName, node, ...parameters) {
+      const traverser = traversers[node.type];
+      if (traverser && traverser[functionName]) {
+        const context = this.createContext(node, parentContext);
+        const childTraverser = this.createTraverser(context);
+
+        return traverser[functionName].apply(traverser, [
+          childTraverser,
+          context,
+          ...parameters
+        ]);
+      }
+
+      console.log("Unhandled type:", node.type);
+    }
+
+    return {
+      evaluate: call.bind(this, "evaluate"),
+      findDeclaration: call.bind(this, "findDeclaration"),
+      findOwner: call.bind(this, "findOwner"),
+      getDeclarationsByName: call.bind(this, "getDeclarationsByName"),
+      getName: call.bind(this, "getName"),
+      traverse: call.bind(this, "traverse"),
+      traverseFile: this.traverseFile.bind(this),
+      setProperty: (ownerContext, name, value) => {
+        const traverser = traversers[ownerContext.type];
+        if (traverser && traverser.setProperty) {
+          return traverser.setProperty(
+            this.createTraverser(ownerContext),
+            ownerContext,
+            name,
+            value
+          );
+        }
+      },
+      setDeclarationValue: (name, value) => {
+        let context = parentContext;
+        while (context) {
+          if (
+            context.declarations &&
+            Object.prototype.hasOwnProperty.call(context.declarations, name)
+          ) {
+            context.declarations[name] = value;
+          }
+
+          context = context.parentContext;
+        }
+      },
+      findMember: (node, name) => {
+        if (node[name]) {
+          return node[name];
+        }
+
+        return this.call("findMember", node, name);
+      }
+    };
+  }
+
+  createContext(node, parentContext) {
+    return {
+      children: [],
+      modulePath: parentContext.modulePath,
+      node,
+      parentContext,
+      type: node.type,
+      workingDirectory: parentContext.workingDirectory
+    };
   }
 
   async traverseFile(workingDirectory, modulePath) {
     const ast = await createAstFromPath(workingDirectory, modulePath);
     const fullPath = path.join(workingDirectory, modulePath);
     const context = {
-      traverser: this,
       workingDirectory: path.dirname(fullPath),
       modulePath
     };
 
-    return this.traverse(ast, context);
+    const traverser = this.createTraverser(context);
+    return traverser.traverse(ast);
   }
 
-  call(functionName, node, ...parameters) {
-    const traverser = traversers[node.type];
+  call(functionName, ...parameters) {
+    const [{ type }] = parameters;
+    const traverser = traversers[type];
     if (traverser && traverser[functionName]) {
-      return traverser[functionName].apply(traverser, [node, ...parameters]);
+      return traverser[functionName].apply(traverser, [this, ...parameters]);
     }
 
-    console.log("Unhandled:", functionName, node.type);
-  }
-
-  findMember(node, name) {
-    if (node[name]) {
-      return node[name];
-    }
-
-    return this.call("findMember", node, name);
+    console.log("Unhandled:", functionName, type);
   }
 }
 

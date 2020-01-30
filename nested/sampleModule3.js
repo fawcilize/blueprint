@@ -1,7 +1,9 @@
 module.exports.test = 1;
 
 module.exports = () => {
+  const test = 1;
   console.log("Found it");
+  console.log(test);
 };
 
 let test = {

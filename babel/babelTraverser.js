@@ -5,6 +5,17 @@ const createAstFromPath = require("../createAstFromPath");
 class BabelTraverser {
   constructor() {}
 
+  createContext(node, parentContext) {
+    return {
+      children: [],
+      modulePath: parentContext.modulePath,
+      node,
+      parentContext,
+      type: node.type,
+      workingDirectory: parentContext.workingDirectory
+    };
+  }
+
   createTraverser(parentContext) {
     function call(functionName, node, ...parameters) {
       const traverser = traversers[node.type];
@@ -64,17 +75,6 @@ class BabelTraverser {
     };
   }
 
-  createContext(node, parentContext) {
-    return {
-      children: [],
-      modulePath: parentContext.modulePath,
-      node,
-      parentContext,
-      type: node.type,
-      workingDirectory: parentContext.workingDirectory
-    };
-  }
-
   async traverseFile(workingDirectory, modulePath) {
     const ast = await createAstFromPath(workingDirectory, modulePath);
     const fullPath = path.join(workingDirectory, modulePath);
@@ -85,16 +85,6 @@ class BabelTraverser {
 
     const traverser = this.createTraverser(context);
     return traverser.traverse(ast);
-  }
-
-  call(functionName, ...parameters) {
-    const [{ type }] = parameters;
-    const traverser = traversers[type];
-    if (traverser && traverser[functionName]) {
-      return traverser[functionName].apply(traverser, [this, ...parameters]);
-    }
-
-    console.log("Unhandled:", functionName, type);
   }
 }
 

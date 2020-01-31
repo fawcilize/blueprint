@@ -1,6 +1,12 @@
 const t = require("@babel/types");
 const globals = require("globals");
 
+class GlobalHandler {
+  static async traverse(traverser, context) {
+    return context;
+  }
+}
+
 class FileHandler {
   static async findMember(node, name) {
     if (node.currentScope.declarations.module.exports[name]) {
@@ -18,7 +24,7 @@ class FileHandler {
       },
       console: {
         log: {
-          type: "console.log"
+          type: "Global"
         }
       }
     };
@@ -33,7 +39,7 @@ class ProgramHandler {
   static async traverse(traverser, context) {
     const { node } = context;
 
-    context.children = [];
+    context.codePaths = [];
     context.declarations = {};
 
     for (let i = 0; i < node.body.length; i += 1) {
@@ -51,8 +57,10 @@ class ProgramHandler {
 
     for (let i = 0; i < node.body.length; i += 1) {
       const bodyNode = node.body[i];
-      const child = await traverser.traverse(bodyNode, context);
-      context.children.push(child);
+      const codePath = await traverser.traverse(bodyNode, context);
+      if (codePath) {
+        context.codePaths.push(codePath);
+      }
     }
 
     return context;
@@ -114,9 +122,9 @@ class CallExpressionHandler {
   static async traverse(traverser, context) {
     const { node } = context;
     const declaration = await traverser.findDeclaration(node.callee);
-    const codePath = await traverser.traverse(declaration);
+    const codePaths = await traverser.traverse(declaration);
 
-    return { node, codePath };
+    return { node, codePaths };
   }
 }
 
@@ -334,6 +342,7 @@ class ObjectExpressionHandler {
 }
 
 module.exports = {
+  Global: GlobalHandler,
   File: FileHandler,
   Program: ProgramHandler,
   FunctionDeclaration: FunctionDeclarationHandler,

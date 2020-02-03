@@ -1,19 +1,17 @@
-// const consoleTest from "./sampleModule3";
-const consoleTest = require("./sampleModule3");
-
-const y = 2;
-const z = 3;
-
-module.exports.nested = {
-  testConsole: () => {
-    consoleTest();
-  }
-};
-
+// This will fuck it up
+testConsole();
 function testConsole() {
-  consoleTest();
+  const test2 = returnTwo(true);
+  console.log(test2);
+  // consoleTest();
 }
 
-module.exports = { testConsole, y, z };
-
-testConsole();
+function returnTwo(test2) {
+  if (false || test2) {
+    return 2;
+  } else if (true) {
+    return returnTwo(true);
+  } else {
+    console.log("Dead code");
+  }
+}

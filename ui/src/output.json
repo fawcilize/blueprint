@@ -1,0 +1,3638 @@
+{
+  "codePath": [
+    {
+      "codePath": [
+        {
+          "codePath": [
+            {
+              "codePath": [
+                {
+                  "codePath": [
+                    {
+                      "codePath": [],
+                      "scope": {
+                        "declarations": {}
+                      },
+                      "file": {
+                        "workingDirectory": "c:\\Development\\blueprint\\nested",
+                        "modulePath": "sampleModule2"
+                      },
+                      "node": {
+                        "type": "CallExpression",
+                        "start": 252,
+                        "end": 267,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 11
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 26
+                          }
+                        },
+                        "callee": {
+                          "type": "Identifier",
+                          "start": 252,
+                          "end": 261,
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 11
+                            },
+                            "end": {
+                              "line": 13,
+                              "column": 20
+                            },
+                            "identifierName": "returnTwo"
+                          },
+                          "name": "returnTwo"
+                        },
+                        "arguments": [
+                          {
+                            "type": "BooleanLiteral",
+                            "start": 262,
+                            "end": 266,
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 21
+                              },
+                              "end": {
+                                "line": 13,
+                                "column": 25
+                              }
+                            },
+                            "value": true
+                          }
+                        ]
+                      },
+                      "type": "CallExpression"
+                    },
+                    {
+                      "codePath": [
+                        {
+                          "type": "Global"
+                        }
+                      ],
+                      "scope": {
+                        "declarations": {}
+                      },
+                      "file": {
+                        "workingDirectory": "c:\\Development\\blueprint\\nested",
+                        "modulePath": "sampleModule2"
+                      },
+                      "node": {
+                        "type": "CallExpression",
+                        "start": 286,
+                        "end": 310,
+                        "loc": {
+                          "start": {
+                            "line": 15,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 28
+                          }
+                        },
+                        "callee": {
+                          "type": "MemberExpression",
+                          "start": 286,
+                          "end": 297,
+                          "loc": {
+                            "start": {
+                              "line": 15,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 15,
+                              "column": 15
+                            }
+                          },
+                          "object": {
+                            "type": "Identifier",
+                            "start": 286,
+                            "end": 293,
+                            "loc": {
+                              "start": {
+                                "line": 15,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 15,
+                                "column": 11
+                              },
+                              "identifierName": "console"
+                            },
+                            "name": "console"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 294,
+                            "end": 297,
+                            "loc": {
+                              "start": {
+                                "line": 15,
+                                "column": 12
+                              },
+                              "end": {
+                                "line": 15,
+                                "column": 15
+                              },
+                              "identifierName": "log"
+                            },
+                            "name": "log"
+                          },
+                          "computed": false
+                        },
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "start": 298,
+                            "end": 309,
+                            "loc": {
+                              "start": {
+                                "line": 15,
+                                "column": 16
+                              },
+                              "end": {
+                                "line": 15,
+                                "column": 27
+                              }
+                            },
+                            "extra": {
+                              "rawValue": "Dead code",
+                              "raw": "\"Dead code\""
+                            },
+                            "value": "Dead code"
+                          }
+                        ]
+                      },
+                      "type": "CallExpression"
+                    }
+                  ],
+                  "scope": {
+                    "declarations": {}
+                  },
+                  "file": {
+                    "workingDirectory": "c:\\Development\\blueprint\\nested",
+                    "modulePath": "sampleModule2"
+                  },
+                  "node": {
+                    "type": "FunctionDeclaration",
+                    "start": 150,
+                    "end": 319,
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 0
+                      },
+                      "end": {
+                        "line": 17,
+                        "column": 1
+                      }
+                    },
+                    "id": {
+                      "type": "Identifier",
+                      "start": 159,
+                      "end": 168,
+                      "loc": {
+                        "start": {
+                          "line": 9,
+                          "column": 9
+                        },
+                        "end": {
+                          "line": 9,
+                          "column": 18
+                        },
+                        "identifierName": "returnTwo"
+                      },
+                      "name": "returnTwo"
+                    },
+                    "generator": false,
+                    "async": false,
+                    "params": [
+                      {
+                        "type": "Identifier",
+                        "start": 169,
+                        "end": 174,
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 19
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 24
+                          },
+                          "identifierName": "test2"
+                        },
+                        "name": "test2"
+                      }
+                    ],
+                    "body": {
+                      "type": "BlockStatement",
+                      "start": 176,
+                      "end": 319,
+                      "loc": {
+                        "start": {
+                          "line": 9,
+                          "column": 26
+                        },
+                        "end": {
+                          "line": 17,
+                          "column": 1
+                        }
+                      },
+                      "body": [
+                        {
+                          "type": "IfStatement",
+                          "start": 181,
+                          "end": 316,
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 16,
+                              "column": 3
+                            }
+                          },
+                          "test": {
+                            "type": "LogicalExpression",
+                            "start": 185,
+                            "end": 199,
+                            "loc": {
+                              "start": {
+                                "line": 10,
+                                "column": 6
+                              },
+                              "end": {
+                                "line": 10,
+                                "column": 20
+                              }
+                            },
+                            "left": {
+                              "type": "BooleanLiteral",
+                              "start": 185,
+                              "end": 190,
+                              "loc": {
+                                "start": {
+                                  "line": 10,
+                                  "column": 6
+                                },
+                                "end": {
+                                  "line": 10,
+                                  "column": 11
+                                }
+                              },
+                              "value": false
+                            },
+                            "operator": "||",
+                            "right": {
+                              "type": "Identifier",
+                              "start": 194,
+                              "end": 199,
+                              "loc": {
+                                "start": {
+                                  "line": 10,
+                                  "column": 15
+                                },
+                                "end": {
+                                  "line": 10,
+                                  "column": 20
+                                },
+                                "identifierName": "test2"
+                              },
+                              "name": "test2"
+                            }
+                          },
+                          "consequent": {
+                            "type": "BlockStatement",
+                            "start": 201,
+                            "end": 222,
+                            "loc": {
+                              "start": {
+                                "line": 10,
+                                "column": 22
+                              },
+                              "end": {
+                                "line": 12,
+                                "column": 3
+                              }
+                            },
+                            "body": [
+                              {
+                                "type": "ReturnStatement",
+                                "start": 208,
+                                "end": 217,
+                                "loc": {
+                                  "start": {
+                                    "line": 11,
+                                    "column": 4
+                                  },
+                                  "end": {
+                                    "line": 11,
+                                    "column": 13
+                                  }
+                                },
+                                "argument": {
+                                  "type": "NumericLiteral",
+                                  "start": 215,
+                                  "end": 216,
+                                  "loc": {
+                                    "start": {
+                                      "line": 11,
+                                      "column": 11
+                                    },
+                                    "end": {
+                                      "line": 11,
+                                      "column": 12
+                                    }
+                                  },
+                                  "extra": {
+                                    "rawValue": 2,
+                                    "raw": "2"
+                                  },
+                                  "value": 2
+                                }
+                              }
+                            ],
+                            "directives": []
+                          },
+                          "alternate": {
+                            "type": "IfStatement",
+                            "start": 228,
+                            "end": 316,
+                            "loc": {
+                              "start": {
+                                "line": 12,
+                                "column": 9
+                              },
+                              "end": {
+                                "line": 16,
+                                "column": 3
+                              }
+                            },
+                            "test": {
+                              "type": "BooleanLiteral",
+                              "start": 232,
+                              "end": 236,
+                              "loc": {
+                                "start": {
+                                  "line": 12,
+                                  "column": 13
+                                },
+                                "end": {
+                                  "line": 12,
+                                  "column": 17
+                                }
+                              },
+                              "value": true
+                            },
+                            "consequent": {
+                              "type": "BlockStatement",
+                              "start": 238,
+                              "end": 273,
+                              "loc": {
+                                "start": {
+                                  "line": 12,
+                                  "column": 19
+                                },
+                                "end": {
+                                  "line": 14,
+                                  "column": 3
+                                }
+                              },
+                              "body": [
+                                {
+                                  "type": "ReturnStatement",
+                                  "start": 245,
+                                  "end": 268,
+                                  "loc": {
+                                    "start": {
+                                      "line": 13,
+                                      "column": 4
+                                    },
+                                    "end": {
+                                      "line": 13,
+                                      "column": 27
+                                    }
+                                  },
+                                  "argument": {
+                                    "type": "CallExpression",
+                                    "start": 252,
+                                    "end": 267,
+                                    "loc": {
+                                      "start": {
+                                        "line": 13,
+                                        "column": 11
+                                      },
+                                      "end": {
+                                        "line": 13,
+                                        "column": 26
+                                      }
+                                    },
+                                    "callee": {
+                                      "type": "Identifier",
+                                      "start": 252,
+                                      "end": 261,
+                                      "loc": {
+                                        "start": {
+                                          "line": 13,
+                                          "column": 11
+                                        },
+                                        "end": {
+                                          "line": 13,
+                                          "column": 20
+                                        },
+                                        "identifierName": "returnTwo"
+                                      },
+                                      "name": "returnTwo"
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "BooleanLiteral",
+                                        "start": 262,
+                                        "end": 266,
+                                        "loc": {
+                                          "start": {
+                                            "line": 13,
+                                            "column": 21
+                                          },
+                                          "end": {
+                                            "line": 13,
+                                            "column": 25
+                                          }
+                                        },
+                                        "value": true
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "directives": []
+                            },
+                            "alternate": {
+                              "type": "BlockStatement",
+                              "start": 279,
+                              "end": 316,
+                              "loc": {
+                                "start": {
+                                  "line": 14,
+                                  "column": 9
+                                },
+                                "end": {
+                                  "line": 16,
+                                  "column": 3
+                                }
+                              },
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "start": 286,
+                                  "end": 311,
+                                  "loc": {
+                                    "start": {
+                                      "line": 15,
+                                      "column": 4
+                                    },
+                                    "end": {
+                                      "line": 15,
+                                      "column": 29
+                                    }
+                                  },
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "start": 286,
+                                    "end": 310,
+                                    "loc": {
+                                      "start": {
+                                        "line": 15,
+                                        "column": 4
+                                      },
+                                      "end": {
+                                        "line": 15,
+                                        "column": 28
+                                      }
+                                    },
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "start": 286,
+                                      "end": 297,
+                                      "loc": {
+                                        "start": {
+                                          "line": 15,
+                                          "column": 4
+                                        },
+                                        "end": {
+                                          "line": 15,
+                                          "column": 15
+                                        }
+                                      },
+                                      "object": {
+                                        "type": "Identifier",
+                                        "start": 286,
+                                        "end": 293,
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 4
+                                          },
+                                          "end": {
+                                            "line": 15,
+                                            "column": 11
+                                          },
+                                          "identifierName": "console"
+                                        },
+                                        "name": "console"
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "start": 294,
+                                        "end": 297,
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 12
+                                          },
+                                          "end": {
+                                            "line": 15,
+                                            "column": 15
+                                          },
+                                          "identifierName": "log"
+                                        },
+                                        "name": "log"
+                                      },
+                                      "computed": false
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "StringLiteral",
+                                        "start": 298,
+                                        "end": 309,
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 16
+                                          },
+                                          "end": {
+                                            "line": 15,
+                                            "column": 27
+                                          }
+                                        },
+                                        "extra": {
+                                          "rawValue": "Dead code",
+                                          "raw": "\"Dead code\""
+                                        },
+                                        "value": "Dead code"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "directives": []
+                            }
+                          }
+                        }
+                      ],
+                      "directives": []
+                    }
+                  },
+                  "type": "FunctionDeclaration"
+                }
+              ],
+              "scope": {
+                "declarations": {}
+              },
+              "file": {
+                "workingDirectory": "c:\\Development\\blueprint\\nested",
+                "modulePath": "sampleModule2"
+              },
+              "node": {
+                "type": "CallExpression",
+                "start": 83,
+                "end": 98,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 16
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 31
+                  }
+                },
+                "callee": {
+                  "type": "Identifier",
+                  "start": 83,
+                  "end": 92,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 25
+                    },
+                    "identifierName": "returnTwo"
+                  },
+                  "name": "returnTwo"
+                },
+                "arguments": [
+                  {
+                    "type": "BooleanLiteral",
+                    "start": 93,
+                    "end": 97,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 26
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 30
+                      }
+                    },
+                    "value": true
+                  }
+                ]
+              },
+              "type": "CallExpression"
+            },
+            {
+              "codePath": [
+                {
+                  "type": "Global"
+                }
+              ],
+              "scope": {
+                "declarations": {}
+              },
+              "file": {
+                "workingDirectory": "c:\\Development\\blueprint\\nested",
+                "modulePath": "sampleModule2"
+              },
+              "node": {
+                "type": "CallExpression",
+                "start": 103,
+                "end": 121,
+                "loc": {
+                  "start": {
+                    "line": 5,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 20
+                  }
+                },
+                "callee": {
+                  "type": "MemberExpression",
+                  "start": 103,
+                  "end": 114,
+                  "loc": {
+                    "start": {
+                      "line": 5,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 13
+                    }
+                  },
+                  "object": {
+                    "type": "Identifier",
+                    "start": 103,
+                    "end": 110,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 9
+                      },
+                      "identifierName": "console"
+                    },
+                    "name": "console"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "start": 111,
+                    "end": 114,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 10
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 13
+                      },
+                      "identifierName": "log"
+                    },
+                    "name": "log"
+                  },
+                  "computed": false
+                },
+                "arguments": [
+                  {
+                    "type": "Identifier",
+                    "start": 115,
+                    "end": 120,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 14
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 19
+                      },
+                      "identifierName": "test2"
+                    },
+                    "name": "test2"
+                  }
+                ]
+              },
+              "type": "CallExpression"
+            }
+          ],
+          "scope": {
+            "declarations": {}
+          },
+          "file": {
+            "workingDirectory": "c:\\Development\\blueprint\\nested",
+            "modulePath": "sampleModule2"
+          },
+          "node": {
+            "type": "FunctionDeclaration",
+            "start": 41,
+            "end": 146,
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 7,
+                "column": 1
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 50,
+              "end": 61,
+              "loc": {
+                "start": {
+                  "line": 3,
+                  "column": 9
+                },
+                "end": {
+                  "line": 3,
+                  "column": 20
+                },
+                "identifierName": "testConsole"
+              },
+              "name": "testConsole"
+            },
+            "generator": false,
+            "async": false,
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "start": 64,
+              "end": 146,
+              "loc": {
+                "start": {
+                  "line": 3,
+                  "column": 23
+                },
+                "end": {
+                  "line": 7,
+                  "column": 1
+                }
+              },
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "start": 69,
+                  "end": 99,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 32
+                    }
+                  },
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "start": 75,
+                      "end": 98,
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 31
+                        }
+                      },
+                      "id": {
+                        "type": "Identifier",
+                        "start": 75,
+                        "end": 80,
+                        "loc": {
+                          "start": {
+                            "line": 4,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 4,
+                            "column": 13
+                          },
+                          "identifierName": "test2"
+                        },
+                        "name": "test2"
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "start": 83,
+                        "end": 98,
+                        "loc": {
+                          "start": {
+                            "line": 4,
+                            "column": 16
+                          },
+                          "end": {
+                            "line": 4,
+                            "column": 31
+                          }
+                        },
+                        "callee": {
+                          "type": "Identifier",
+                          "start": 83,
+                          "end": 92,
+                          "loc": {
+                            "start": {
+                              "line": 4,
+                              "column": 16
+                            },
+                            "end": {
+                              "line": 4,
+                              "column": 25
+                            },
+                            "identifierName": "returnTwo"
+                          },
+                          "name": "returnTwo"
+                        },
+                        "arguments": [
+                          {
+                            "type": "BooleanLiteral",
+                            "start": 93,
+                            "end": 97,
+                            "loc": {
+                              "start": {
+                                "line": 4,
+                                "column": 26
+                              },
+                              "end": {
+                                "line": 4,
+                                "column": 30
+                              }
+                            },
+                            "value": true
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "kind": "const"
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "start": 103,
+                  "end": 122,
+                  "loc": {
+                    "start": {
+                      "line": 5,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 21
+                    }
+                  },
+                  "expression": {
+                    "type": "CallExpression",
+                    "start": 103,
+                    "end": 121,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 20
+                      }
+                    },
+                    "callee": {
+                      "type": "MemberExpression",
+                      "start": 103,
+                      "end": 114,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 13
+                        }
+                      },
+                      "object": {
+                        "type": "Identifier",
+                        "start": 103,
+                        "end": 110,
+                        "loc": {
+                          "start": {
+                            "line": 5,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 5,
+                            "column": 9
+                          },
+                          "identifierName": "console"
+                        },
+                        "name": "console"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "start": 111,
+                        "end": 114,
+                        "loc": {
+                          "start": {
+                            "line": 5,
+                            "column": 10
+                          },
+                          "end": {
+                            "line": 5,
+                            "column": 13
+                          },
+                          "identifierName": "log"
+                        },
+                        "name": "log"
+                      },
+                      "computed": false
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "start": 115,
+                        "end": 120,
+                        "loc": {
+                          "start": {
+                            "line": 5,
+                            "column": 14
+                          },
+                          "end": {
+                            "line": 5,
+                            "column": 19
+                          },
+                          "identifierName": "test2"
+                        },
+                        "name": "test2"
+                      }
+                    ]
+                  },
+                  "trailingComments": [
+                    {
+                      "type": "CommentLine",
+                      "value": " consoleTest();",
+                      "start": 126,
+                      "end": 143,
+                      "loc": {
+                        "start": {
+                          "line": 6,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 6,
+                          "column": 19
+                        }
+                      }
+                    }
+                  ]
+                }
+              ],
+              "directives": []
+            }
+          },
+          "type": "FunctionDeclaration"
+        }
+      ],
+      "scope": {
+        "declarations": {
+          "testConsole": {
+            "codePath": [
+              {
+                "codePath": [
+                  {
+                    "codePath": [
+                      {
+                        "codePath": [],
+                        "scope": {
+                          "declarations": {}
+                        },
+                        "file": {
+                          "workingDirectory": "c:\\Development\\blueprint\\nested",
+                          "modulePath": "sampleModule2"
+                        },
+                        "node": {
+                          "type": "CallExpression",
+                          "start": 252,
+                          "end": 267,
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 11
+                            },
+                            "end": {
+                              "line": 13,
+                              "column": 26
+                            }
+                          },
+                          "callee": {
+                            "type": "Identifier",
+                            "start": 252,
+                            "end": 261,
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 13,
+                                "column": 20
+                              },
+                              "identifierName": "returnTwo"
+                            },
+                            "name": "returnTwo"
+                          },
+                          "arguments": [
+                            {
+                              "type": "BooleanLiteral",
+                              "start": 262,
+                              "end": 266,
+                              "loc": {
+                                "start": {
+                                  "line": 13,
+                                  "column": 21
+                                },
+                                "end": {
+                                  "line": 13,
+                                  "column": 25
+                                }
+                              },
+                              "value": true
+                            }
+                          ]
+                        },
+                        "type": "CallExpression"
+                      },
+                      {
+                        "codePath": [
+                          {
+                            "type": "Global"
+                          }
+                        ],
+                        "scope": {
+                          "declarations": {}
+                        },
+                        "file": {
+                          "workingDirectory": "c:\\Development\\blueprint\\nested",
+                          "modulePath": "sampleModule2"
+                        },
+                        "node": {
+                          "type": "CallExpression",
+                          "start": 286,
+                          "end": 310,
+                          "loc": {
+                            "start": {
+                              "line": 15,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 15,
+                              "column": 28
+                            }
+                          },
+                          "callee": {
+                            "type": "MemberExpression",
+                            "start": 286,
+                            "end": 297,
+                            "loc": {
+                              "start": {
+                                "line": 15,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 15,
+                                "column": 15
+                              }
+                            },
+                            "object": {
+                              "type": "Identifier",
+                              "start": 286,
+                              "end": 293,
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 4
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 11
+                                },
+                                "identifierName": "console"
+                              },
+                              "name": "console"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "start": 294,
+                              "end": 297,
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 12
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 15
+                                },
+                                "identifierName": "log"
+                              },
+                              "name": "log"
+                            },
+                            "computed": false
+                          },
+                          "arguments": [
+                            {
+                              "type": "StringLiteral",
+                              "start": 298,
+                              "end": 309,
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 16
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 27
+                                }
+                              },
+                              "extra": {
+                                "rawValue": "Dead code",
+                                "raw": "\"Dead code\""
+                              },
+                              "value": "Dead code"
+                            }
+                          ]
+                        },
+                        "type": "CallExpression"
+                      }
+                    ],
+                    "scope": {
+                      "declarations": {}
+                    },
+                    "file": {
+                      "workingDirectory": "c:\\Development\\blueprint\\nested",
+                      "modulePath": "sampleModule2"
+                    },
+                    "node": {
+                      "type": "FunctionDeclaration",
+                      "start": 150,
+                      "end": 319,
+                      "loc": {
+                        "start": {
+                          "line": 9,
+                          "column": 0
+                        },
+                        "end": {
+                          "line": 17,
+                          "column": 1
+                        }
+                      },
+                      "id": {
+                        "type": "Identifier",
+                        "start": 159,
+                        "end": 168,
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 9
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 18
+                          },
+                          "identifierName": "returnTwo"
+                        },
+                        "name": "returnTwo"
+                      },
+                      "generator": false,
+                      "async": false,
+                      "params": [
+                        {
+                          "type": "Identifier",
+                          "start": 169,
+                          "end": 174,
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 19
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 24
+                            },
+                            "identifierName": "test2"
+                          },
+                          "name": "test2"
+                        }
+                      ],
+                      "body": {
+                        "type": "BlockStatement",
+                        "start": 176,
+                        "end": 319,
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 26
+                          },
+                          "end": {
+                            "line": 17,
+                            "column": 1
+                          }
+                        },
+                        "body": [
+                          {
+                            "type": "IfStatement",
+                            "start": 181,
+                            "end": 316,
+                            "loc": {
+                              "start": {
+                                "line": 10,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 16,
+                                "column": 3
+                              }
+                            },
+                            "test": {
+                              "type": "LogicalExpression",
+                              "start": 185,
+                              "end": 199,
+                              "loc": {
+                                "start": {
+                                  "line": 10,
+                                  "column": 6
+                                },
+                                "end": {
+                                  "line": 10,
+                                  "column": 20
+                                }
+                              },
+                              "left": {
+                                "type": "BooleanLiteral",
+                                "start": 185,
+                                "end": 190,
+                                "loc": {
+                                  "start": {
+                                    "line": 10,
+                                    "column": 6
+                                  },
+                                  "end": {
+                                    "line": 10,
+                                    "column": 11
+                                  }
+                                },
+                                "value": false
+                              },
+                              "operator": "||",
+                              "right": {
+                                "type": "Identifier",
+                                "start": 194,
+                                "end": 199,
+                                "loc": {
+                                  "start": {
+                                    "line": 10,
+                                    "column": 15
+                                  },
+                                  "end": {
+                                    "line": 10,
+                                    "column": 20
+                                  },
+                                  "identifierName": "test2"
+                                },
+                                "name": "test2"
+                              }
+                            },
+                            "consequent": {
+                              "type": "BlockStatement",
+                              "start": 201,
+                              "end": 222,
+                              "loc": {
+                                "start": {
+                                  "line": 10,
+                                  "column": 22
+                                },
+                                "end": {
+                                  "line": 12,
+                                  "column": 3
+                                }
+                              },
+                              "body": [
+                                {
+                                  "type": "ReturnStatement",
+                                  "start": 208,
+                                  "end": 217,
+                                  "loc": {
+                                    "start": {
+                                      "line": 11,
+                                      "column": 4
+                                    },
+                                    "end": {
+                                      "line": 11,
+                                      "column": 13
+                                    }
+                                  },
+                                  "argument": {
+                                    "type": "NumericLiteral",
+                                    "start": 215,
+                                    "end": 216,
+                                    "loc": {
+                                      "start": {
+                                        "line": 11,
+                                        "column": 11
+                                      },
+                                      "end": {
+                                        "line": 11,
+                                        "column": 12
+                                      }
+                                    },
+                                    "extra": {
+                                      "rawValue": 2,
+                                      "raw": "2"
+                                    },
+                                    "value": 2
+                                  }
+                                }
+                              ],
+                              "directives": []
+                            },
+                            "alternate": {
+                              "type": "IfStatement",
+                              "start": 228,
+                              "end": 316,
+                              "loc": {
+                                "start": {
+                                  "line": 12,
+                                  "column": 9
+                                },
+                                "end": {
+                                  "line": 16,
+                                  "column": 3
+                                }
+                              },
+                              "test": {
+                                "type": "BooleanLiteral",
+                                "start": 232,
+                                "end": 236,
+                                "loc": {
+                                  "start": {
+                                    "line": 12,
+                                    "column": 13
+                                  },
+                                  "end": {
+                                    "line": 12,
+                                    "column": 17
+                                  }
+                                },
+                                "value": true
+                              },
+                              "consequent": {
+                                "type": "BlockStatement",
+                                "start": 238,
+                                "end": 273,
+                                "loc": {
+                                  "start": {
+                                    "line": 12,
+                                    "column": 19
+                                  },
+                                  "end": {
+                                    "line": 14,
+                                    "column": 3
+                                  }
+                                },
+                                "body": [
+                                  {
+                                    "type": "ReturnStatement",
+                                    "start": 245,
+                                    "end": 268,
+                                    "loc": {
+                                      "start": {
+                                        "line": 13,
+                                        "column": 4
+                                      },
+                                      "end": {
+                                        "line": 13,
+                                        "column": 27
+                                      }
+                                    },
+                                    "argument": {
+                                      "type": "CallExpression",
+                                      "start": 252,
+                                      "end": 267,
+                                      "loc": {
+                                        "start": {
+                                          "line": 13,
+                                          "column": 11
+                                        },
+                                        "end": {
+                                          "line": 13,
+                                          "column": 26
+                                        }
+                                      },
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "start": 252,
+                                        "end": 261,
+                                        "loc": {
+                                          "start": {
+                                            "line": 13,
+                                            "column": 11
+                                          },
+                                          "end": {
+                                            "line": 13,
+                                            "column": 20
+                                          },
+                                          "identifierName": "returnTwo"
+                                        },
+                                        "name": "returnTwo"
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "BooleanLiteral",
+                                          "start": 262,
+                                          "end": 266,
+                                          "loc": {
+                                            "start": {
+                                              "line": 13,
+                                              "column": 21
+                                            },
+                                            "end": {
+                                              "line": 13,
+                                              "column": 25
+                                            }
+                                          },
+                                          "value": true
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "directives": []
+                              },
+                              "alternate": {
+                                "type": "BlockStatement",
+                                "start": 279,
+                                "end": 316,
+                                "loc": {
+                                  "start": {
+                                    "line": 14,
+                                    "column": 9
+                                  },
+                                  "end": {
+                                    "line": 16,
+                                    "column": 3
+                                  }
+                                },
+                                "body": [
+                                  {
+                                    "type": "ExpressionStatement",
+                                    "start": 286,
+                                    "end": 311,
+                                    "loc": {
+                                      "start": {
+                                        "line": 15,
+                                        "column": 4
+                                      },
+                                      "end": {
+                                        "line": 15,
+                                        "column": 29
+                                      }
+                                    },
+                                    "expression": {
+                                      "type": "CallExpression",
+                                      "start": 286,
+                                      "end": 310,
+                                      "loc": {
+                                        "start": {
+                                          "line": 15,
+                                          "column": 4
+                                        },
+                                        "end": {
+                                          "line": 15,
+                                          "column": 28
+                                        }
+                                      },
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "start": 286,
+                                        "end": 297,
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 4
+                                          },
+                                          "end": {
+                                            "line": 15,
+                                            "column": 15
+                                          }
+                                        },
+                                        "object": {
+                                          "type": "Identifier",
+                                          "start": 286,
+                                          "end": 293,
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 4
+                                            },
+                                            "end": {
+                                              "line": 15,
+                                              "column": 11
+                                            },
+                                            "identifierName": "console"
+                                          },
+                                          "name": "console"
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "start": 294,
+                                          "end": 297,
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 12
+                                            },
+                                            "end": {
+                                              "line": 15,
+                                              "column": 15
+                                            },
+                                            "identifierName": "log"
+                                          },
+                                          "name": "log"
+                                        },
+                                        "computed": false
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "StringLiteral",
+                                          "start": 298,
+                                          "end": 309,
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 16
+                                            },
+                                            "end": {
+                                              "line": 15,
+                                              "column": 27
+                                            }
+                                          },
+                                          "extra": {
+                                            "rawValue": "Dead code",
+                                            "raw": "\"Dead code\""
+                                          },
+                                          "value": "Dead code"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "directives": []
+                              }
+                            }
+                          }
+                        ],
+                        "directives": []
+                      }
+                    },
+                    "type": "FunctionDeclaration"
+                  }
+                ],
+                "scope": {
+                  "declarations": {}
+                },
+                "file": {
+                  "workingDirectory": "c:\\Development\\blueprint\\nested",
+                  "modulePath": "sampleModule2"
+                },
+                "node": {
+                  "type": "CallExpression",
+                  "start": 83,
+                  "end": 98,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 31
+                    }
+                  },
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 83,
+                    "end": 92,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 16
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 25
+                      },
+                      "identifierName": "returnTwo"
+                    },
+                    "name": "returnTwo"
+                  },
+                  "arguments": [
+                    {
+                      "type": "BooleanLiteral",
+                      "start": 93,
+                      "end": 97,
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 26
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 30
+                        }
+                      },
+                      "value": true
+                    }
+                  ]
+                },
+                "type": "CallExpression"
+              },
+              {
+                "codePath": [
+                  {
+                    "type": "Global"
+                  }
+                ],
+                "scope": {
+                  "declarations": {}
+                },
+                "file": {
+                  "workingDirectory": "c:\\Development\\blueprint\\nested",
+                  "modulePath": "sampleModule2"
+                },
+                "node": {
+                  "type": "CallExpression",
+                  "start": 103,
+                  "end": 121,
+                  "loc": {
+                    "start": {
+                      "line": 5,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  },
+                  "callee": {
+                    "type": "MemberExpression",
+                    "start": 103,
+                    "end": 114,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 13
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 103,
+                      "end": 110,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 9
+                        },
+                        "identifierName": "console"
+                      },
+                      "name": "console"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 111,
+                      "end": 114,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 10
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 13
+                        },
+                        "identifierName": "log"
+                      },
+                      "name": "log"
+                    },
+                    "computed": false
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "start": 115,
+                      "end": 120,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 14
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 19
+                        },
+                        "identifierName": "test2"
+                      },
+                      "name": "test2"
+                    }
+                  ]
+                },
+                "type": "CallExpression"
+              }
+            ],
+            "scope": {
+              "declarations": {}
+            },
+            "file": {
+              "workingDirectory": "c:\\Development\\blueprint\\nested",
+              "modulePath": "sampleModule2"
+            },
+            "node": {
+              "type": "FunctionDeclaration",
+              "start": 41,
+              "end": 146,
+              "loc": {
+                "start": {
+                  "line": 3,
+                  "column": 0
+                },
+                "end": {
+                  "line": 7,
+                  "column": 1
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 50,
+                "end": 61,
+                "loc": {
+                  "start": {
+                    "line": 3,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 3,
+                    "column": 20
+                  },
+                  "identifierName": "testConsole"
+                },
+                "name": "testConsole"
+              },
+              "generator": false,
+              "async": false,
+              "params": [],
+              "body": {
+                "type": "BlockStatement",
+                "start": 64,
+                "end": 146,
+                "loc": {
+                  "start": {
+                    "line": 3,
+                    "column": 23
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 1
+                  }
+                },
+                "body": [
+                  {
+                    "type": "VariableDeclaration",
+                    "start": 69,
+                    "end": 99,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 32
+                      }
+                    },
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "start": 75,
+                        "end": 98,
+                        "loc": {
+                          "start": {
+                            "line": 4,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 4,
+                            "column": 31
+                          }
+                        },
+                        "id": {
+                          "type": "Identifier",
+                          "start": 75,
+                          "end": 80,
+                          "loc": {
+                            "start": {
+                              "line": 4,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 4,
+                              "column": 13
+                            },
+                            "identifierName": "test2"
+                          },
+                          "name": "test2"
+                        },
+                        "init": {
+                          "type": "CallExpression",
+                          "start": 83,
+                          "end": 98,
+                          "loc": {
+                            "start": {
+                              "line": 4,
+                              "column": 16
+                            },
+                            "end": {
+                              "line": 4,
+                              "column": 31
+                            }
+                          },
+                          "callee": {
+                            "type": "Identifier",
+                            "start": 83,
+                            "end": 92,
+                            "loc": {
+                              "start": {
+                                "line": 4,
+                                "column": 16
+                              },
+                              "end": {
+                                "line": 4,
+                                "column": 25
+                              },
+                              "identifierName": "returnTwo"
+                            },
+                            "name": "returnTwo"
+                          },
+                          "arguments": [
+                            {
+                              "type": "BooleanLiteral",
+                              "start": 93,
+                              "end": 97,
+                              "loc": {
+                                "start": {
+                                  "line": 4,
+                                  "column": 26
+                                },
+                                "end": {
+                                  "line": 4,
+                                  "column": 30
+                                }
+                              },
+                              "value": true
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "kind": "const"
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "start": 103,
+                    "end": 122,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 21
+                      }
+                    },
+                    "expression": {
+                      "type": "CallExpression",
+                      "start": 103,
+                      "end": 121,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 20
+                        }
+                      },
+                      "callee": {
+                        "type": "MemberExpression",
+                        "start": 103,
+                        "end": 114,
+                        "loc": {
+                          "start": {
+                            "line": 5,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 5,
+                            "column": 13
+                          }
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "start": 103,
+                          "end": 110,
+                          "loc": {
+                            "start": {
+                              "line": 5,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 5,
+                              "column": 9
+                            },
+                            "identifierName": "console"
+                          },
+                          "name": "console"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "start": 111,
+                          "end": 114,
+                          "loc": {
+                            "start": {
+                              "line": 5,
+                              "column": 10
+                            },
+                            "end": {
+                              "line": 5,
+                              "column": 13
+                            },
+                            "identifierName": "log"
+                          },
+                          "name": "log"
+                        },
+                        "computed": false
+                      },
+                      "arguments": [
+                        {
+                          "type": "Identifier",
+                          "start": 115,
+                          "end": 120,
+                          "loc": {
+                            "start": {
+                              "line": 5,
+                              "column": 14
+                            },
+                            "end": {
+                              "line": 5,
+                              "column": 19
+                            },
+                            "identifierName": "test2"
+                          },
+                          "name": "test2"
+                        }
+                      ]
+                    },
+                    "trailingComments": [
+                      {
+                        "type": "CommentLine",
+                        "value": " consoleTest();",
+                        "start": 126,
+                        "end": 143,
+                        "loc": {
+                          "start": {
+                            "line": 6,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 6,
+                            "column": 19
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "directives": []
+              }
+            },
+            "type": "FunctionDeclaration"
+          },
+          "returnTwo": {
+            "codePath": [
+              {
+                "codePath": [],
+                "scope": {
+                  "declarations": {}
+                },
+                "file": {
+                  "workingDirectory": "c:\\Development\\blueprint\\nested",
+                  "modulePath": "sampleModule2"
+                },
+                "node": {
+                  "type": "CallExpression",
+                  "start": 252,
+                  "end": 267,
+                  "loc": {
+                    "start": {
+                      "line": 13,
+                      "column": 11
+                    },
+                    "end": {
+                      "line": 13,
+                      "column": 26
+                    }
+                  },
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 252,
+                    "end": 261,
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 11
+                      },
+                      "end": {
+                        "line": 13,
+                        "column": 20
+                      },
+                      "identifierName": "returnTwo"
+                    },
+                    "name": "returnTwo"
+                  },
+                  "arguments": [
+                    {
+                      "type": "BooleanLiteral",
+                      "start": 262,
+                      "end": 266,
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 21
+                        },
+                        "end": {
+                          "line": 13,
+                          "column": 25
+                        }
+                      },
+                      "value": true
+                    }
+                  ]
+                },
+                "type": "CallExpression"
+              },
+              {
+                "codePath": [
+                  {
+                    "type": "Global"
+                  }
+                ],
+                "scope": {
+                  "declarations": {}
+                },
+                "file": {
+                  "workingDirectory": "c:\\Development\\blueprint\\nested",
+                  "modulePath": "sampleModule2"
+                },
+                "node": {
+                  "type": "CallExpression",
+                  "start": 286,
+                  "end": 310,
+                  "loc": {
+                    "start": {
+                      "line": 15,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 15,
+                      "column": 28
+                    }
+                  },
+                  "callee": {
+                    "type": "MemberExpression",
+                    "start": 286,
+                    "end": 297,
+                    "loc": {
+                      "start": {
+                        "line": 15,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 15,
+                        "column": 15
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 286,
+                      "end": 293,
+                      "loc": {
+                        "start": {
+                          "line": 15,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 15,
+                          "column": 11
+                        },
+                        "identifierName": "console"
+                      },
+                      "name": "console"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 294,
+                      "end": 297,
+                      "loc": {
+                        "start": {
+                          "line": 15,
+                          "column": 12
+                        },
+                        "end": {
+                          "line": 15,
+                          "column": 15
+                        },
+                        "identifierName": "log"
+                      },
+                      "name": "log"
+                    },
+                    "computed": false
+                  },
+                  "arguments": [
+                    {
+                      "type": "StringLiteral",
+                      "start": 298,
+                      "end": 309,
+                      "loc": {
+                        "start": {
+                          "line": 15,
+                          "column": 16
+                        },
+                        "end": {
+                          "line": 15,
+                          "column": 27
+                        }
+                      },
+                      "extra": {
+                        "rawValue": "Dead code",
+                        "raw": "\"Dead code\""
+                      },
+                      "value": "Dead code"
+                    }
+                  ]
+                },
+                "type": "CallExpression"
+              }
+            ],
+            "scope": {
+              "declarations": {}
+            },
+            "file": {
+              "workingDirectory": "c:\\Development\\blueprint\\nested",
+              "modulePath": "sampleModule2"
+            },
+            "node": {
+              "type": "FunctionDeclaration",
+              "start": 150,
+              "end": 319,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 0
+                },
+                "end": {
+                  "line": 17,
+                  "column": 1
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 159,
+                "end": 168,
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 9,
+                    "column": 18
+                  },
+                  "identifierName": "returnTwo"
+                },
+                "name": "returnTwo"
+              },
+              "generator": false,
+              "async": false,
+              "params": [
+                {
+                  "type": "Identifier",
+                  "start": 169,
+                  "end": 174,
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 19
+                    },
+                    "end": {
+                      "line": 9,
+                      "column": 24
+                    },
+                    "identifierName": "test2"
+                  },
+                  "name": "test2"
+                }
+              ],
+              "body": {
+                "type": "BlockStatement",
+                "start": 176,
+                "end": 319,
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 17,
+                    "column": 1
+                  }
+                },
+                "body": [
+                  {
+                    "type": "IfStatement",
+                    "start": 181,
+                    "end": 316,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 16,
+                        "column": 3
+                      }
+                    },
+                    "test": {
+                      "type": "LogicalExpression",
+                      "start": 185,
+                      "end": 199,
+                      "loc": {
+                        "start": {
+                          "line": 10,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 10,
+                          "column": 20
+                        }
+                      },
+                      "left": {
+                        "type": "BooleanLiteral",
+                        "start": 185,
+                        "end": 190,
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 6
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 11
+                          }
+                        },
+                        "value": false
+                      },
+                      "operator": "||",
+                      "right": {
+                        "type": "Identifier",
+                        "start": 194,
+                        "end": 199,
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 20
+                          },
+                          "identifierName": "test2"
+                        },
+                        "name": "test2"
+                      }
+                    },
+                    "consequent": {
+                      "type": "BlockStatement",
+                      "start": 201,
+                      "end": 222,
+                      "loc": {
+                        "start": {
+                          "line": 10,
+                          "column": 22
+                        },
+                        "end": {
+                          "line": 12,
+                          "column": 3
+                        }
+                      },
+                      "body": [
+                        {
+                          "type": "ReturnStatement",
+                          "start": 208,
+                          "end": 217,
+                          "loc": {
+                            "start": {
+                              "line": 11,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 11,
+                              "column": 13
+                            }
+                          },
+                          "argument": {
+                            "type": "NumericLiteral",
+                            "start": 215,
+                            "end": 216,
+                            "loc": {
+                              "start": {
+                                "line": 11,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 11,
+                                "column": 12
+                              }
+                            },
+                            "extra": {
+                              "rawValue": 2,
+                              "raw": "2"
+                            },
+                            "value": 2
+                          }
+                        }
+                      ],
+                      "directives": []
+                    },
+                    "alternate": {
+                      "type": "IfStatement",
+                      "start": 228,
+                      "end": 316,
+                      "loc": {
+                        "start": {
+                          "line": 12,
+                          "column": 9
+                        },
+                        "end": {
+                          "line": 16,
+                          "column": 3
+                        }
+                      },
+                      "test": {
+                        "type": "BooleanLiteral",
+                        "start": 232,
+                        "end": 236,
+                        "loc": {
+                          "start": {
+                            "line": 12,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 12,
+                            "column": 17
+                          }
+                        },
+                        "value": true
+                      },
+                      "consequent": {
+                        "type": "BlockStatement",
+                        "start": 238,
+                        "end": 273,
+                        "loc": {
+                          "start": {
+                            "line": 12,
+                            "column": 19
+                          },
+                          "end": {
+                            "line": 14,
+                            "column": 3
+                          }
+                        },
+                        "body": [
+                          {
+                            "type": "ReturnStatement",
+                            "start": 245,
+                            "end": 268,
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 13,
+                                "column": 27
+                              }
+                            },
+                            "argument": {
+                              "type": "CallExpression",
+                              "start": 252,
+                              "end": 267,
+                              "loc": {
+                                "start": {
+                                  "line": 13,
+                                  "column": 11
+                                },
+                                "end": {
+                                  "line": 13,
+                                  "column": 26
+                                }
+                              },
+                              "callee": {
+                                "type": "Identifier",
+                                "start": 252,
+                                "end": 261,
+                                "loc": {
+                                  "start": {
+                                    "line": 13,
+                                    "column": 11
+                                  },
+                                  "end": {
+                                    "line": 13,
+                                    "column": 20
+                                  },
+                                  "identifierName": "returnTwo"
+                                },
+                                "name": "returnTwo"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "BooleanLiteral",
+                                  "start": 262,
+                                  "end": 266,
+                                  "loc": {
+                                    "start": {
+                                      "line": 13,
+                                      "column": 21
+                                    },
+                                    "end": {
+                                      "line": 13,
+                                      "column": 25
+                                    }
+                                  },
+                                  "value": true
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "directives": []
+                      },
+                      "alternate": {
+                        "type": "BlockStatement",
+                        "start": 279,
+                        "end": 316,
+                        "loc": {
+                          "start": {
+                            "line": 14,
+                            "column": 9
+                          },
+                          "end": {
+                            "line": 16,
+                            "column": 3
+                          }
+                        },
+                        "body": [
+                          {
+                            "type": "ExpressionStatement",
+                            "start": 286,
+                            "end": 311,
+                            "loc": {
+                              "start": {
+                                "line": 15,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 15,
+                                "column": 29
+                              }
+                            },
+                            "expression": {
+                              "type": "CallExpression",
+                              "start": 286,
+                              "end": 310,
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 4
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 28
+                                }
+                              },
+                              "callee": {
+                                "type": "MemberExpression",
+                                "start": 286,
+                                "end": 297,
+                                "loc": {
+                                  "start": {
+                                    "line": 15,
+                                    "column": 4
+                                  },
+                                  "end": {
+                                    "line": 15,
+                                    "column": 15
+                                  }
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "start": 286,
+                                  "end": 293,
+                                  "loc": {
+                                    "start": {
+                                      "line": 15,
+                                      "column": 4
+                                    },
+                                    "end": {
+                                      "line": 15,
+                                      "column": 11
+                                    },
+                                    "identifierName": "console"
+                                  },
+                                  "name": "console"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "start": 294,
+                                  "end": 297,
+                                  "loc": {
+                                    "start": {
+                                      "line": 15,
+                                      "column": 12
+                                    },
+                                    "end": {
+                                      "line": 15,
+                                      "column": 15
+                                    },
+                                    "identifierName": "log"
+                                  },
+                                  "name": "log"
+                                },
+                                "computed": false
+                              },
+                              "arguments": [
+                                {
+                                  "type": "StringLiteral",
+                                  "start": 298,
+                                  "end": 309,
+                                  "loc": {
+                                    "start": {
+                                      "line": 15,
+                                      "column": 16
+                                    },
+                                    "end": {
+                                      "line": 15,
+                                      "column": 27
+                                    }
+                                  },
+                                  "extra": {
+                                    "rawValue": "Dead code",
+                                    "raw": "\"Dead code\""
+                                  },
+                                  "value": "Dead code"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "directives": []
+                      }
+                    }
+                  }
+                ],
+                "directives": []
+              }
+            },
+            "type": "FunctionDeclaration"
+          }
+        }
+      },
+      "file": {
+        "workingDirectory": "c:\\Development\\blueprint\\nested",
+        "modulePath": "sampleModule2"
+      },
+      "node": {
+        "type": "CallExpression",
+        "start": 25,
+        "end": 38,
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 13
+          }
+        },
+        "callee": {
+          "type": "Identifier",
+          "start": 25,
+          "end": 36,
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 11
+            },
+            "identifierName": "testConsole"
+          },
+          "name": "testConsole"
+        },
+        "arguments": []
+      },
+      "type": "CallExpression"
+    }
+  ],
+  "scope": {
+    "declarations": {
+      "Array": false,
+      "ArrayBuffer": false,
+      "Atomics": false,
+      "BigInt": false,
+      "BigInt64Array": false,
+      "BigUint64Array": false,
+      "Boolean": false,
+      "constructor": false,
+      "DataView": false,
+      "Date": false,
+      "decodeURI": false,
+      "decodeURIComponent": false,
+      "encodeURI": false,
+      "encodeURIComponent": false,
+      "Error": false,
+      "escape": false,
+      "eval": false,
+      "EvalError": false,
+      "Float32Array": false,
+      "Float64Array": false,
+      "Function": false,
+      "globalThis": false,
+      "hasOwnProperty": false,
+      "Infinity": false,
+      "Int16Array": false,
+      "Int32Array": false,
+      "Int8Array": false,
+      "isFinite": false,
+      "isNaN": false,
+      "isPrototypeOf": false,
+      "JSON": false,
+      "Map": false,
+      "Math": false,
+      "NaN": false,
+      "Number": false,
+      "Object": false,
+      "parseFloat": false,
+      "parseInt": false,
+      "Promise": false,
+      "propertyIsEnumerable": false,
+      "Proxy": false,
+      "RangeError": false,
+      "ReferenceError": false,
+      "Reflect": false,
+      "RegExp": false,
+      "Set": false,
+      "SharedArrayBuffer": false,
+      "String": false,
+      "Symbol": false,
+      "SyntaxError": false,
+      "toLocaleString": false,
+      "toString": false,
+      "TypeError": false,
+      "Uint16Array": false,
+      "Uint32Array": false,
+      "Uint8Array": false,
+      "Uint8ClampedArray": false,
+      "undefined": false,
+      "unescape": false,
+      "URIError": false,
+      "valueOf": false,
+      "WeakMap": false,
+      "WeakSet": false,
+      "exports": true,
+      "global": false,
+      "module": {
+        "exports": {}
+      },
+      "require": false,
+      "console": {
+        "log": {
+          "type": "Global"
+        }
+      }
+    }
+  },
+  "file": {
+    "workingDirectory": "c:\\Development\\blueprint\\nested",
+    "modulePath": "sampleModule2"
+  },
+  "node": {
+    "type": "File",
+    "start": 0,
+    "end": 321,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 18,
+        "column": 0
+      }
+    },
+    "errors": [],
+    "program": {
+      "type": "Program",
+      "start": 0,
+      "end": 321,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 0
+        }
+      },
+      "sourceType": "module",
+      "interpreter": null,
+      "body": [
+        {
+          "type": "ExpressionStatement",
+          "start": 25,
+          "end": 39,
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 14
+            }
+          },
+          "expression": {
+            "type": "CallExpression",
+            "start": 25,
+            "end": 38,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 2,
+                "column": 13
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "start": 25,
+              "end": 36,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 11
+                },
+                "identifierName": "testConsole"
+              },
+              "name": "testConsole"
+            },
+            "arguments": []
+          },
+          "leadingComments": [
+            {
+              "type": "CommentLine",
+              "value": " This will fuck it up",
+              "start": 0,
+              "end": 23,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 41,
+          "end": 146,
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 1
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "start": 50,
+            "end": 61,
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 9
+              },
+              "end": {
+                "line": 3,
+                "column": 20
+              },
+              "identifierName": "testConsole"
+            },
+            "name": "testConsole"
+          },
+          "generator": false,
+          "async": false,
+          "params": [],
+          "body": {
+            "type": "BlockStatement",
+            "start": 64,
+            "end": 146,
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 23
+              },
+              "end": {
+                "line": 7,
+                "column": 1
+              }
+            },
+            "body": [
+              {
+                "type": "VariableDeclaration",
+                "start": 69,
+                "end": 99,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 32
+                  }
+                },
+                "declarations": [
+                  {
+                    "type": "VariableDeclarator",
+                    "start": 75,
+                    "end": 98,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 8
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 31
+                      }
+                    },
+                    "id": {
+                      "type": "Identifier",
+                      "start": 75,
+                      "end": 80,
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 13
+                        },
+                        "identifierName": "test2"
+                      },
+                      "name": "test2"
+                    },
+                    "init": {
+                      "type": "CallExpression",
+                      "start": 83,
+                      "end": 98,
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 16
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 31
+                        }
+                      },
+                      "callee": {
+                        "type": "Identifier",
+                        "start": 83,
+                        "end": 92,
+                        "loc": {
+                          "start": {
+                            "line": 4,
+                            "column": 16
+                          },
+                          "end": {
+                            "line": 4,
+                            "column": 25
+                          },
+                          "identifierName": "returnTwo"
+                        },
+                        "name": "returnTwo"
+                      },
+                      "arguments": [
+                        {
+                          "type": "BooleanLiteral",
+                          "start": 93,
+                          "end": 97,
+                          "loc": {
+                            "start": {
+                              "line": 4,
+                              "column": 26
+                            },
+                            "end": {
+                              "line": 4,
+                              "column": 30
+                            }
+                          },
+                          "value": true
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "kind": "const"
+              },
+              {
+                "type": "ExpressionStatement",
+                "start": 103,
+                "end": 122,
+                "loc": {
+                  "start": {
+                    "line": 5,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 21
+                  }
+                },
+                "expression": {
+                  "type": "CallExpression",
+                  "start": 103,
+                  "end": 121,
+                  "loc": {
+                    "start": {
+                      "line": 5,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  },
+                  "callee": {
+                    "type": "MemberExpression",
+                    "start": 103,
+                    "end": 114,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 13
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 103,
+                      "end": 110,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 9
+                        },
+                        "identifierName": "console"
+                      },
+                      "name": "console"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 111,
+                      "end": 114,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 10
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 13
+                        },
+                        "identifierName": "log"
+                      },
+                      "name": "log"
+                    },
+                    "computed": false
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "start": 115,
+                      "end": 120,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 14
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 19
+                        },
+                        "identifierName": "test2"
+                      },
+                      "name": "test2"
+                    }
+                  ]
+                },
+                "trailingComments": [
+                  {
+                    "type": "CommentLine",
+                    "value": " consoleTest();",
+                    "start": 126,
+                    "end": 143,
+                    "loc": {
+                      "start": {
+                        "line": 6,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 6,
+                        "column": 19
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "directives": []
+          }
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 150,
+          "end": 319,
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 0
+            },
+            "end": {
+              "line": 17,
+              "column": 1
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "start": 159,
+            "end": 168,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 9
+              },
+              "end": {
+                "line": 9,
+                "column": 18
+              },
+              "identifierName": "returnTwo"
+            },
+            "name": "returnTwo"
+          },
+          "generator": false,
+          "async": false,
+          "params": [
+            {
+              "type": "Identifier",
+              "start": 169,
+              "end": 174,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 19
+                },
+                "end": {
+                  "line": 9,
+                  "column": 24
+                },
+                "identifierName": "test2"
+              },
+              "name": "test2"
+            }
+          ],
+          "body": {
+            "type": "BlockStatement",
+            "start": 176,
+            "end": 319,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 26
+              },
+              "end": {
+                "line": 17,
+                "column": 1
+              }
+            },
+            "body": [
+              {
+                "type": "IfStatement",
+                "start": 181,
+                "end": 316,
+                "loc": {
+                  "start": {
+                    "line": 10,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 16,
+                    "column": 3
+                  }
+                },
+                "test": {
+                  "type": "LogicalExpression",
+                  "start": 185,
+                  "end": 199,
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 6
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 20
+                    }
+                  },
+                  "left": {
+                    "type": "BooleanLiteral",
+                    "start": 185,
+                    "end": 190,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 6
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 11
+                      }
+                    },
+                    "value": false
+                  },
+                  "operator": "||",
+                  "right": {
+                    "type": "Identifier",
+                    "start": 194,
+                    "end": 199,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 15
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 20
+                      },
+                      "identifierName": "test2"
+                    },
+                    "name": "test2"
+                  }
+                },
+                "consequent": {
+                  "type": "BlockStatement",
+                  "start": 201,
+                  "end": 222,
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 12,
+                      "column": 3
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 208,
+                      "end": 217,
+                      "loc": {
+                        "start": {
+                          "line": 11,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 11,
+                          "column": 13
+                        }
+                      },
+                      "argument": {
+                        "type": "NumericLiteral",
+                        "start": 215,
+                        "end": 216,
+                        "loc": {
+                          "start": {
+                            "line": 11,
+                            "column": 11
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 12
+                          }
+                        },
+                        "extra": {
+                          "rawValue": 2,
+                          "raw": "2"
+                        },
+                        "value": 2
+                      }
+                    }
+                  ],
+                  "directives": []
+                },
+                "alternate": {
+                  "type": "IfStatement",
+                  "start": 228,
+                  "end": 316,
+                  "loc": {
+                    "start": {
+                      "line": 12,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 16,
+                      "column": 3
+                    }
+                  },
+                  "test": {
+                    "type": "BooleanLiteral",
+                    "start": 232,
+                    "end": 236,
+                    "loc": {
+                      "start": {
+                        "line": 12,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 12,
+                        "column": 17
+                      }
+                    },
+                    "value": true
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "start": 238,
+                    "end": 273,
+                    "loc": {
+                      "start": {
+                        "line": 12,
+                        "column": 19
+                      },
+                      "end": {
+                        "line": 14,
+                        "column": 3
+                      }
+                    },
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "start": 245,
+                        "end": 268,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 27
+                          }
+                        },
+                        "argument": {
+                          "type": "CallExpression",
+                          "start": 252,
+                          "end": 267,
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 11
+                            },
+                            "end": {
+                              "line": 13,
+                              "column": 26
+                            }
+                          },
+                          "callee": {
+                            "type": "Identifier",
+                            "start": 252,
+                            "end": 261,
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 13,
+                                "column": 20
+                              },
+                              "identifierName": "returnTwo"
+                            },
+                            "name": "returnTwo"
+                          },
+                          "arguments": [
+                            {
+                              "type": "BooleanLiteral",
+                              "start": 262,
+                              "end": 266,
+                              "loc": {
+                                "start": {
+                                  "line": 13,
+                                  "column": 21
+                                },
+                                "end": {
+                                  "line": 13,
+                                  "column": 25
+                                }
+                              },
+                              "value": true
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "directives": []
+                  },
+                  "alternate": {
+                    "type": "BlockStatement",
+                    "start": 279,
+                    "end": 316,
+                    "loc": {
+                      "start": {
+                        "line": 14,
+                        "column": 9
+                      },
+                      "end": {
+                        "line": 16,
+                        "column": 3
+                      }
+                    },
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "start": 286,
+                        "end": 311,
+                        "loc": {
+                          "start": {
+                            "line": 15,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 29
+                          }
+                        },
+                        "expression": {
+                          "type": "CallExpression",
+                          "start": 286,
+                          "end": 310,
+                          "loc": {
+                            "start": {
+                              "line": 15,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 15,
+                              "column": 28
+                            }
+                          },
+                          "callee": {
+                            "type": "MemberExpression",
+                            "start": 286,
+                            "end": 297,
+                            "loc": {
+                              "start": {
+                                "line": 15,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 15,
+                                "column": 15
+                              }
+                            },
+                            "object": {
+                              "type": "Identifier",
+                              "start": 286,
+                              "end": 293,
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 4
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 11
+                                },
+                                "identifierName": "console"
+                              },
+                              "name": "console"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "start": 294,
+                              "end": 297,
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 12
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 15
+                                },
+                                "identifierName": "log"
+                              },
+                              "name": "log"
+                            },
+                            "computed": false
+                          },
+                          "arguments": [
+                            {
+                              "type": "StringLiteral",
+                              "start": 298,
+                              "end": 309,
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 16
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 27
+                                }
+                              },
+                              "extra": {
+                                "rawValue": "Dead code",
+                                "raw": "\"Dead code\""
+                              },
+                              "value": "Dead code"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "directives": []
+                  }
+                }
+              }
+            ],
+            "directives": []
+          }
+        }
+      ],
+      "directives": []
+    },
+    "comments": [
+      {
+        "type": "CommentLine",
+        "value": " This will fuck it up",
+        "start": 0,
+        "end": 23,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 23
+          }
+        }
+      },
+      {
+        "type": "CommentLine",
+        "value": " consoleTest();",
+        "start": 126,
+        "end": 143,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 2
+          },
+          "end": {
+            "line": 6,
+            "column": 19
+          }
+        }
+      }
+    ]
+  },
+  "type": "File"
+}

@@ -1,7 +1,14 @@
 const t = require("@babel/types");
+const { default: generator } = require("@babel/generator");
 const globals = require("globals");
 
 class GlobalHandler {
+  static async traverse(traverser, context) {
+    return context;
+  }
+}
+
+class RecursionHandler {
   static async traverse(traverser, context) {
     return context;
   }
@@ -16,7 +23,8 @@ class FileHandler {
 
   static async traverse(traverser, context) {
     const { node } = context;
-    context.declarations = {
+    context.scope = traverser.createScope();
+    context.scope.declarations = {
       ...globals.builtin,
       ...globals.commonjs,
       module: {
@@ -29,8 +37,9 @@ class FileHandler {
       }
     };
 
-    const child = await traverser.traverse(node.program, context);
-    context.children = [child];
+    context.codePath = [];
+
+    await traverser.traverse(node.program, context);
     return context;
   }
 }
@@ -39,27 +48,13 @@ class ProgramHandler {
   static async traverse(traverser, context) {
     const { node } = context;
 
-    context.codePaths = [];
-    context.declarations = {};
+    context.scope = traverser.createScope();
+    context.scope.declarations = await traverser.getDeclarations(node.body);
 
     for (let i = 0; i < node.body.length; i += 1) {
       const bodyNode = node.body[i];
-      if (!t.isDeclaration(bodyNode)) {
-        continue;
-      }
-
-      const declarations = await traverser.getDeclarationsByName(bodyNode);
-
-      if (declarations) {
-        context.declarations = { ...context.declarations, ...declarations };
-      }
-    }
-
-    for (let i = 0; i < node.body.length; i += 1) {
-      const bodyNode = node.body[i];
-      const codePath = await traverser.traverse(bodyNode, context);
-      if (codePath) {
-        context.codePaths.push(codePath);
+      if (!t.isFunction(bodyNode)) {
+        await traverser.traverse(bodyNode, context);
       }
     }
 
@@ -73,7 +68,7 @@ class VariableDeclarationHandler {
     }
   }
 
-  static async getDeclarationsByName(traverser, { node }) {
+  static getDeclarationsByName(traverser, { node }) {
     return node.declarations.reduce((declarations, declaration) => {
       declarations[declaration.id.name] = null;
       return declarations;
@@ -87,13 +82,11 @@ class VariableDeclarationHandler {
       const declarationNode = node.declarations[i];
       // TODO type not variable declarator?
       if (t.isIdentifier(declarationNode.id)) {
-        const name = declarationNode.id.name;
-        const result = await traverser.evaluate(declarationNode.init, context);
-        traverser.setDeclarationValue(name, result);
+        await traverser.traverse(declarationNode.init);
+        // const result = await traverser.evaluate(declarationNode.init, context);
+        // traverser.setDeclarationValue(name, result);
       }
     }
-
-    return context;
   }
 }
 
@@ -115,24 +108,33 @@ class CallExpressionHandler {
   }
 
   static async evaluate(traverser, context) {
-    const declaration = await this.findDeclaration(traverser, context);
-    return traverser.evaluate(declaration, context);
+    const { node } = context;
+    const declaration = await traverser.findDeclaration(node.callee);
+    return await traverser.evaluate(declaration);
   }
 
   static async traverse(traverser, context) {
     const { node } = context;
-    const declaration = await traverser.findDeclaration(node.callee);
-    const codePaths = await traverser.traverse(declaration);
 
-    return { node, codePaths };
+    const parentCodePath = context.codePath;
+    parentCodePath.push(context);
+
+    const declaration = await traverser.findDeclaration(node.callee);
+    if (traverser.hasAncestor(declaration)) {
+      context.codePath = [];
+      await traverser.traverse({ type: "Recursion" });
+      return;
+    }
+
+    await traverser.traverse(declaration);
+    context.codePath = [declaration];
   }
 }
 
 class ExpressionStatementHandler {
   static async traverse(traverser, context) {
     const { node } = context;
-    context.children = await traverser.traverse(node.expression, context);
-    return context;
+    await traverser.traverse(node.expression, context);
   }
 }
 
@@ -189,48 +191,41 @@ class ArrowFunctionExpressionHandler {
 }
 
 class FunctionDeclarationHandler {
-  static async getDeclarationsByName(traverser, { node }) {
+  static async getDeclarationsByName(traverser, context) {
+    const { node } = context;
+    const bodyNodes = node.body.body;
+
+    context.scope = traverser.createScope();
+    context.scope.declarations = await traverser.getDeclarations(bodyNodes);
+    context.codePath = [];
+
     return {
-      [node.id.name]: null
+      [context.node.id.name]: context
     };
+  }
+
+  static async evaluate(traverser, context, callArguments) {
+    const { node } = context;
+
+    context.scope.declarations = await traverser.getDeclarations(node.body);
+
+    for (let i = 0; i < node.body.body.length; i += 1) {
+      const bodyNode = node.body.body[i];
+      const output = generator(bodyNode.test);
+      const result = eval(output.code);
+      await traverser.traverse(bodyNode);
+    }
   }
 
   static async traverse(traverser, context) {
     const { node } = context;
-    const bodyNodes = node.body.body;
-    const functionContext = {
-      ...context,
-      node,
-      children: [],
-      currentScope: {
-        declarations: {},
-        parentScope: context.currentScope
-      }
-    };
 
-    for (let i = 0; i < bodyNodes.length; i += 1) {
-      const bodyNode = bodyNodes[i];
-      const declarations = await traverser.getDeclarationsByName(
-        bodyNode,
-        functionContext
-      );
+    context.scope.declarations = await traverser.getDeclarations(node.body);
 
-      if (declarations) {
-        functionContext.currentScope.declarations = {
-          ...functionContext.currentScope.declarations,
-          ...declarations
-        };
-      }
+    for (let i = 0; i < node.body.body.length; i += 1) {
+      const bodyNode = node.body.body[i];
+      await traverser.traverse(bodyNode);
     }
-
-    for (let i = 0; i < bodyNodes.length; i += 1) {
-      const bodyNode = bodyNodes[i];
-      functionContext.children.push(
-        await traverser.traverse(bodyNode, functionContext)
-      );
-    }
-
-    return functionContext;
   }
 }
 
@@ -271,7 +266,7 @@ class IdentifierHandler {
 
     let currentContext = context;
     while (currentContext) {
-      const declarations = currentContext.declarations;
+      const declarations = currentContext.scope.declarations;
       if (
         declarations &&
         Object.prototype.hasOwnProperty.call(declarations, name)
@@ -341,8 +336,47 @@ class ObjectExpressionHandler {
   }
 }
 
+class LogicalExpressionHandler {
+  static async traverse(traverser, context) {
+    const { node } = context;
+    await Promise.all([
+      traverser.traverse(node.left),
+      traverser.traverse(node.right)
+    ]);
+  }
+}
+
+class IfStatementHandler {
+  static async traverse(traverser, context) {
+    const { node } = context;
+    await traverser.traverse(node.test);
+    await traverser.traverse(node.consequent);
+    if (node.alternate) {
+      await traverser.traverse(node.alternate);
+    }
+  }
+}
+
+class BlockStatementHandler {
+  static async traverse(traverser, context) {
+    const { node } = context;
+
+    for (let i = 0; i < node.body.length; i += 1) {
+      await traverser.traverse(node.body[i]);
+    }
+  }
+}
+
+class ReturnStatementHandler {
+  static async traverse(traverser, context) {
+    const { node } = context;
+    await traverser.traverse(node.argument);
+  }
+}
+
 module.exports = {
   Global: GlobalHandler,
+  Recursion: RecursionHandler,
   File: FileHandler,
   Program: ProgramHandler,
   FunctionDeclaration: FunctionDeclarationHandler,
@@ -357,5 +391,9 @@ module.exports = {
   AssignmentExpression: AssignmentExpressionHandler,
   Identifier: IdentifierHandler,
   ObjectExpression: ObjectExpressionHandler,
-  ObjectProperty: ObjectPropertyHandler
+  ObjectProperty: ObjectPropertyHandler,
+  IfStatement: IfStatementHandler,
+  BlockStatement: BlockStatementHandler,
+  LogicalExpression: LogicalExpressionHandler,
+  ReturnStatement: ReturnStatementHandler
 };
